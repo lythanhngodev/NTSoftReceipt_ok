@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="UserNTSoftReceipt" Class="UsersDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\sqlexpress;Initial Catalog=UserNTSoftReceipt;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="UserNTSoftReceiptConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tblConnectString" Member="tblConnectStrings">
+    <Type Name="tblConnectString">
+      <Column Name="idconn" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="connString" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblDB" Member="tblDBs">
+    <Type Name="tblDB">
+      <Column Name="dbName" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="dbSize" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="dbRemark" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblDMPhongBan" Member="tblDMPhongBans">
+    <Type Name="tblDMPhongBan">
+      <Column Name="sttPhongBanpr" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="maPhongBan" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="tenPhongBan" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="phongCN" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ghiChu" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="maDonvipr_sd" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="nguoiThaotac" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="ngayThaotac" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="ngayTao" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="sttPhongBanMoi" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblGroupPermiss" Member="tblGroupPermisses">
+    <Type Name="tblGroupPermiss">
+      <Column Name="groupPerIDpr" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="functionIDpr_sd" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="idGrouppr_sd" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="permission" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="tblUserGroup_tblGroupPermiss" Member="tblUserGroup" ThisKey="idGrouppr_sd" OtherKey="idGrouppr" Type="tblUserGroup" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblLog" Member="tblLogs">
+    <Type Name="tblLog">
+      <Column Name="sttNhatky" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="maNguoidungpr_sd" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="maNganSach" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ngayDangnhap" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="compName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ipNet" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblNguoiSudung" Member="tblNguoiSudungs">
+    <Type Name="tblNguoiSudung">
+      <Column Name="sttNguoidungpr" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="tenDangNhap" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="matMa" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AdminR" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DatabaseR" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CapDo" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="online" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblPermiss" Member="tblPermisses">
+    <Type Name="tblPermiss">
+      <Column Name="permisspr" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="permissName" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblPositionShow" Member="tblPositionShows">
+    <Type Name="tblPositionShow">
+      <Column Name="positionpr" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblShowEvent" Member="tblShowEvents">
+    <Type Name="tblShowEvent">
+      <Column Name="showEventpr" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblThongTinDN" Member="tblThongTinDNs">
+    <Type Name="tblThongTinDN">
+      <Column Name="masothuepr" Type="System.String" DbType="NVarChar(15) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="tendonvi" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="tenGiaoDich" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="diaChi" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="maTinhpr_sd" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="maQuanHuyenpr_sd" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="maXaPhuongpr_sd" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="diaDanh" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="sodienthoai" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="soFax" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="nhanGD" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="giamdoc" Type="System.String" DbType="NVarChar(35)" CanBeNull="true" />
+      <Column Name="nguoiDaiDien" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="chucvu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="nhanKTT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ketoanTruong" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="thuquy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="thuKho" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="nguoiLapSo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="kyHieupr_sd" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="website" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="soTaiKhoan" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="tenNganhang" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="ngayDauKy" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="ngayTao" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="ngayCuoiKy" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="tenCoQuanThue" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="logo" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="inLogo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="inMavach" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="duongDanXML" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblUserGroup" Member="tblUserGroups">
+    <Type Name="tblUserGroup">
+      <Column Name="idGrouppr" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="groupName" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Association Name="tblUserGroup_tblGroupPermiss" Member="tblGroupPermisses" ThisKey="idGrouppr" OtherKey="idGrouppr_sd" Type="tblGroupPermiss" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblUserPermiss" Member="tblUserPermisses">
+    <Type Name="tblUserPermiss">
+      <Column Name="permissIDpr" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="functionIDpr_sd" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="maNguoidungpr_sd" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="permission" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="tblFunction_tblUserPermiss" Member="tblFunction" ThisKey="functionIDpr_sd" OtherKey="functionIDpr" Type="tblFunction" IsForeignKey="true" />
+      <Association Name="tblUser_tblUserPermiss" Member="tblUser" ThisKey="maNguoidungpr_sd" OtherKey="maNguoidungpr" Type="tblUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblFunctions" Member="tblFunctions">
+    <Type Name="tblFunction">
+      <Column Name="functionIDpr" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="dienGiai" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="functionName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="nhomChucnang" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="tabViewText" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="width" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="showEventpr_sd" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="positionpr_sd" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="pathFile" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="styleFolder" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="folderIcon" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IconName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="OpenLinkUrl" Type="System.String" DbType="NVarChar(3000)" CanBeNull="true" />
+      <Column Name="iframeName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OnClientClick" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IDMainMenu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ImageDemo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="tenFile" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="guiBaoCao" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="tblFunction_tblUserPermiss" Member="tblUserPermisses" ThisKey="functionIDpr" OtherKey="functionIDpr_sd" Type="tblUserPermiss" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblUsers" Member="tblUsers">
+    <Type Name="tblUser">
+      <Column Name="maNguoidungpr" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="tenDangNhap" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="matMa" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="maXacNhan" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="idGrouppr_sd" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="maDonvipr_sd" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="nguoiThaoTac" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="ngayThaotac" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="ngungTD" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="online" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ipNet" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ngayDangNhap" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="sttPhongBanpr_sd" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Association Name="tblUser_tblUserPermiss" Member="tblUserPermisses" ThisKey="maNguoidungpr" OtherKey="maNguoidungpr_sd" Type="tblUserPermiss" />
+      <Association Name="tblDMDonvi_tblUser" Member="tblDMDonvi" ThisKey="maDonvipr_sd" OtherKey="maNgansachpr" Type="tblDMDonvi" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblDMDonvi" Member="tblDMDonvis">
+    <Type Name="tblDMDonvi">
+      <Column Name="maNgansachpr" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="maDonVi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="tenDonVi" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="diaChi" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="dienThoai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="tenThuTruong" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="tenNguoiLap" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="tenKeToanTruong" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="maCapTren" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="tblDMDonvi_tblUser" Member="tblUsers" ThisKey="maNgansachpr" OtherKey="maDonvipr_sd" Type="tblUser" />
+    </Type>
+  </Table>
+  <Function Name="dbo.sp_ChangePassword" Method="sp_ChangePassword">
+    <Parameter Name="maNguoidung" Type="System.Decimal" DbType="Decimal" />
+    <Parameter Name="password" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="passconfirm" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="newpassword" Type="System.String" DbType="NVarChar(250)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_SetOnline" Method="sp_SetOnline">
+    <Parameter Name="maNguoidung" Type="System.Decimal" DbType="Decimal" />
+    <Parameter Name="ipNet" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_GetCurrentDate" Method="sp_GetCurrentDate">
+    <ElementType Name="sp_GetCurrentDateResult">
+      <Column Name="Column1" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_SaveLog" Method="sp_SaveLog">
+    <Parameter Name="maNguoidung" Type="System.Decimal" DbType="Decimal" />
+    <Parameter Name="maNgasach" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ipNet" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="compName" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_SetOffline" Method="sp_SetOffline">
+    <Parameter Name="maNguoidung" Type="System.Decimal" DbType="Decimal" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

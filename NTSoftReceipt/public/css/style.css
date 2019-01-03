@@ -1,0 +1,44 @@
+@charset 'utf-8';
+.modal-open .background-container{
+    -webkit-filter: blur(8px);
+    -moz-filter: blur(8px);
+    -o-filter: blur(8px);
+    -ms-filter: blur(8px);
+    filter: blur(8px);
+}
+.dropdown-item.active, .dropdown-item:active{
+	background-color: #563d7c !important;
+}
+.page-item.active .page-link {
+    z-index: 1;
+    background-color: #505050 !important;
+    border-color: #dee2e5 !important;
+}
+.hinhanh{
+	width: 69px;font-size: 25pt;text-align: center;border: 3px dotted #bdbdbd;border-radius: 4px;color: #9c9c9c;padding-bottom: 10px;user-select: none;
+}
+#khunghinh .hinhcon{
+    width: 100px;
+    height: 100px;
+    float: left;
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    margin-right: 1rem;
+    position: relative;
+}
+#khunghinh .hinhcon .fa-times{
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    font-size: 10px;
+    color: #fff;
+    background-color: red;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: none;
+}
+#khunghinh .hinhcon:hover > .fa-times{
+    display: block;
+}
