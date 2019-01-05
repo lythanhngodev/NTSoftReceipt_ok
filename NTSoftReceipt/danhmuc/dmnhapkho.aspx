@@ -12,6 +12,20 @@
             Grid1.refresh();
             Grid2.refresh();
         }
+        function setWindowPositionW1() {
+            var screenWidth = screen.width;
+            var screenHeight = screen.height;
+            var Window1Size = Window1.getSize();
+            Window1.setPosition(parseFloat((parseFloat(screenWidth) - parseFloat(Window1Size.width)) / 2), 200);
+            Window1.Open();
+        }
+        function setWindowPositionW2() {
+            var screenWidth = screen.width;
+            var screenHeight = screen.height;
+            var Window2Size = Window2.getSize();
+            Window2.setPosition(parseFloat((parseFloat(screenWidth) - parseFloat(Window2Size.width)) / 2), 200);
+            Window2.Open();
+        }
         var thaotacW2 = "them";
         var thaotacCT = "them";
         function LamMoi() {
@@ -57,7 +71,7 @@
                 document.getElementById('<%= txtSttNKpr_sd.ClientID%>').value = record.sttNKpr;
                 Grid2.refresh();
                 Window1.setTitle("Sửa thông tin nhập kho");
-                Window1.Open();
+                setWindowPositionW1();
                 $('#txtNgayNhap').val(date[2].substr(0,4)+"-"+date[1]+"-"+date[0]);
             } catch (e) {
                 document.getElementById('txtNgayNhap').value = null;
@@ -93,7 +107,7 @@
                 document.getElementById('<%= txtHDsttNKCTpr.ClientID %>').value = record.sttNKCTpr;
 
                 Window1.Close();
-                Window2.Open();
+                setWindowPositionW2();
                 bttLuuCapNhatKho.enable();
             }
             return false;
@@ -219,7 +233,7 @@
                     Window2.setTitle("Thêm mới NKCT");
                     LamMoiNKCT();
                     Window1.Close();
-                    Window2.Open();
+                    setWindowPositionW2();
                 }else{
                     alert('Vui lòng ấn lưu trước');
                 }

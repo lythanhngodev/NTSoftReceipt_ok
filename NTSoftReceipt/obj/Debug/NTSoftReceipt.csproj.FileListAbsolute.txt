@@ -12,13 +12,8 @@ D:\NhatTamSoft\Soure_Code_Phat_Trien\ThucTap\NTSoftReceipt\NTSoftReceipt\obj\Deb
 D:\Cong ty\NhatTam\NTSoftReceipt_ok\NTSoftReceipt\bin\NTSoftReceipt.dll.config
 D:\Cong ty\NhatTam\NTSoftReceipt_ok\NTSoftReceipt\bin\NTSoftReceipt.dll
 D:\Cong ty\NhatTam\NTSoftReceipt_ok\NTSoftReceipt\bin\NTSoftReceipt.pdb
-D:\Cong ty\NhatTam\NTSoftReceipt_ok\NTSoftReceipt\bin\Newtonsoft.Json.dll
-D:\Cong ty\NhatTam\NTSoftReceipt_ok\NTSoftReceipt\bin\System.Net.Http.Formatting.dll
-D:\Cong ty\NhatTam\NTSoftReceipt_ok\NTSoftReceipt\bin\vng.zalo.ZaloCSharpSDK.dll
 D:\Cong ty\NhatTam\NTSoftReceipt_ok\NTSoftReceipt\bin\stdole.dll
 D:\Cong ty\NhatTam\NTSoftReceipt_ok\NTSoftReceipt\bin\EnvDTE.dll
-D:\Cong ty\NhatTam\NTSoftReceipt_ok\NTSoftReceipt\bin\Newtonsoft.Json.xml
-D:\Cong ty\NhatTam\NTSoftReceipt_ok\NTSoftReceipt\bin\System.Net.Http.Formatting.xml
 D:\Cong ty\NhatTam\NTSoftReceipt_ok\NTSoftReceipt\bin\EnvDTE.xml
 D:\Cong ty\NhatTam\NTSoftReceipt_ok\NTSoftReceipt\obj\Debug\NTSoftReceipt.dll
 D:\Cong ty\NhatTam\NTSoftReceipt_ok\NTSoftReceipt\obj\Debug\NTSoftReceipt.pdb
