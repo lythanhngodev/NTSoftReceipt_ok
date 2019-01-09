@@ -1,0 +1,961 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EC07B43D-6FAB-425D-983D-03AC4012209B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NTSoftReceipt</RootNamespace>
+    <AssemblyName>NTSoftReceipt</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=3.0.30512.13267, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL" />
+    <Reference Include="AjaxPro, Version=9.2.17.1, Culture=neutral, PublicKeyToken=4735ae9824c7d3ec" />
+    <Reference Include="CKEditor.NET, Version=3.6.6.2, Culture=neutral, PublicKeyToken=e379cdf2f8354999, processorArchitecture=MSIL" />
+    <Reference Include="CKFinder, Version=2.4.0.2631, Culture=neutral, PublicKeyToken=579e7adc719a1423, processorArchitecture=MSIL" />
+    <Reference Include="ClosedXML, Version=0.76.0.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="CuteWebUI.AjaxUploader, Version=3.0.0.0, Culture=neutral, PublicKeyToken=bc00d4b0e43ec38d, processorArchitecture=MSIL" />
+    <Reference Include="DocumentFormat.OpenXml">
+      <HintPath>..\..\bin\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Microsoft.Office.Core, Version=2.4.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL" />
+    <Reference Include="LumenWorks.Framework.IO, Version=3.8.0.0, Culture=neutral, PublicKeyToken=5ad3ea2f85776344, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.Office.Interop.Word.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net35\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Obout.Ajax.UI, Version=2.11.316.1, Culture=neutral, PublicKeyToken=24f3c5cea456f322, processorArchitecture=MSIL" />
+    <Reference Include="obout_AJAXPage, Version=1.10.6.0, Culture=neutral, PublicKeyToken=597a97d56362c7e5, processorArchitecture=MSIL" />
+    <Reference Include="obout_ASPTreeView_2_NET, Version=2.0.41.0, Culture=neutral, PublicKeyToken=6fd96a95fc486c7d, processorArchitecture=MSIL" />
+    <Reference Include="obout_Calendar2_Net, Version=2.9.6.0, Culture=neutral, PublicKeyToken=b114d8766feff9ce, processorArchitecture=MSIL" />
+    <Reference Include="obout_ColorPicker, Version=1.10.1104.1, Culture=neutral, PublicKeyToken=544c9b6c403ccf41, processorArchitecture=MSIL" />
+    <Reference Include="obout_ComboBox, Version=4.0.7.0, Culture=neutral, PublicKeyToken=8921cd007946710d, processorArchitecture=MSIL" />
+    <Reference Include="obout_EasyMenu_Pro, Version=3.11.1.1, Culture=neutral, PublicKeyToken=b76d93635057b0c1, processorArchitecture=MSIL" />
+    <Reference Include="obout_Editor, Version=1.12.113.18, Culture=neutral, PublicKeyToken=3758f1b5e9d8196b, processorArchitecture=MSIL" />
+    <Reference Include="obout_FileUpload, Version=1.10.806.1, Culture=neutral, PublicKeyToken=c8b4009f4d53d5e5, processorArchitecture=MSIL" />
+    <Reference Include="obout_Flyout2_NET, Version=2.0.5.0, Culture=neutral, PublicKeyToken=d6418bad3a294aff, processorArchitecture=MSIL" />
+    <Reference Include="obout_Grid_NET, Version=7.0.5.0, Culture=neutral, PublicKeyToken=5ddc49d3b53e3f98, processorArchitecture=MSIL" />
+    <Reference Include="obout_ImageZoom_NET, Version=1.4.0.1, Culture=neutral, PublicKeyToken=c5bb29a21fa7230b, processorArchitecture=MSIL" />
+    <Reference Include="obout_Interface, Version=4.0.9.0, Culture=neutral, PublicKeyToken=d5dff6913a9d6649, processorArchitecture=MSIL" />
+    <Reference Include="obout_ListBox, Version=1.0.7.0, Culture=neutral, PublicKeyToken=5a727501b20f450d, processorArchitecture=MSIL" />
+    <Reference Include="obout_Scheduler_NET, Version=1.1.0.9, Culture=neutral, PublicKeyToken=5db6fa176e504b1e, processorArchitecture=MSIL" />
+    <Reference Include="obout_Show_Net, Version=1.4.0.0, Culture=neutral, PublicKeyToken=a24f0e4ecff66e91, processorArchitecture=MSIL" />
+    <Reference Include="obout_SlideMenu3_Pro_NET, Version=3.3.1.6, Culture=neutral, PublicKeyToken=cabe53a497e8b042, processorArchitecture=MSIL" />
+    <Reference Include="obout_Splitter2_Net, Version=2.3.11.0, Culture=neutral, PublicKeyToken=4ae4a41d71ecfc26, processorArchitecture=MSIL" />
+    <Reference Include="obout_SuperForm, Version=1.0.5.0, Culture=neutral, PublicKeyToken=9349eebacd58e679, processorArchitecture=MSIL" />
+    <Reference Include="obout_TextMenu, Version=3.8.10.0, Culture=neutral, PublicKeyToken=230fff0683fbecad, processorArchitecture=MSIL" />
+    <Reference Include="obout_Tree_DB_Net, Version=3.0.1.0, Culture=neutral, PublicKeyToken=c8dc0d167daf92d0, processorArchitecture=MSIL" />
+    <Reference Include="obout_Window_NET, Version=1.6.0.6, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Office, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Office.dll</HintPath>
+    </Reference>
+    <Reference Include="QLNS2014">
+      <HintPath>..\..\bin\QLNS2014.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WEB_DLL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\resources\custom-styles\black_glass\asc.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\desc.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\details_btn_close.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\details_btn_open.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\filter.png" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\first_disabled.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\first_normal.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\first_over.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\first_pressed.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\footer.png" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\footer_corner_left.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\footer_corner_left.png" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\footer_corner_middle.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\footer_corner_middle.png" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\footer_corner_right.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\footer_corner_right.png" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\form_bgr.png" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\grid_body_left.png" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\grid_body_right.png" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\grouping_area.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\grouping_area.png" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\grouping_area_column.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\grouping_area_column.png" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\grouping_area_column_dragging.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\grouping_area_column_dragging.png" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\grouping_area_column_left.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\grouping_area_column_left.png" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\grouping_area_column_left_dragging.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\grouping_area_column_left_dragging.png" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\grouping_area_column_right.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\grouping_area_column_right.png" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\grouping_area_column_right_dragging.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\grouping_area_column_right_dragging.png" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\grouping_area_column_spacer.png" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\grouping_area_left.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\grouping_area_left.png" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\grouping_area_right.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\grouping_area_right.png" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\grouping_dragged_column.png" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\group_arrow_bottom.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\group_arrow_bottom.png" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\group_arrow_top.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\group_arrow_top.png" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\group_btn_close.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\group_btn_open.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\group_summary.png" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\header.png" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\header_corner_left.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\header_corner_left.png" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\header_corner_middle.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\header_corner_middle.png" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\header_corner_right.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\header_corner_right.png" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\header_pressed.png" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\header_without_grouping.png" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\interface\OboutDropDownList\images\drop-down-horizontal.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\interface\OboutDropDownList\images\drop-down-horizontal.png" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\interface\OboutDropDownList\images\drop-down-vertical.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\interface\OboutDropDownList\images\drop-down-vertical.png" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\interface\OboutDropDownList\images\horizontal.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\interface\OboutDropDownList\images\horizontal.png" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\interface\OboutDropDownList\images\lighted.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\interface\OboutDropDownList\images\lighted.png" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\interface\OboutDropDownList\images\vertical.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\interface\OboutDropDownList\images\vertical.png" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\interface\OboutDropDownList\style.css" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\interface\OboutTextBox\images\textarea-horizontal.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\interface\OboutTextBox\images\textarea-horizontal.png" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\interface\OboutTextBox\images\textarea-vertical.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\interface\OboutTextBox\images\textarea-vertical.png" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\interface\OboutTextBox\images\textbox.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\interface\OboutTextBox\images\textbox.png" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\interface\OboutTextBox\style.css" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\interface\OboutTextBox\style_multiline.css" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\last_disabled.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\last_normal.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\last_over.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\last_pressed.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\left_side.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\left_side.png" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\next_disabled.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\next_normal.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\next_over.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\next_pressed.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\page_number_normal.png" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\page_number_over.png" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\page_number_selected.png" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\placeholder.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\placeholder_empty.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\previous_disabled.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\previous_normal.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\previous_over.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\previous_pressed.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\record_group_header.png" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\record_group_header_padding.png" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\record_group_header_padding_right.png" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\right_side.gif" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\right_side.png" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\row1.png" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\row2.png" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\row_hover.png" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\row_selected.png" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\style.css" />
+    <Content Include="App_Themes\resources\custom-styles\black_glass\summary.png" />
+    <Content Include="App_Themes\resources\custom-styles\global-nav-treatment1v12r.css" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\asc.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\desc.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\details_btn_close.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\details_btn_open.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\filter.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\first_disabled.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\first_normal.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\first_over.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\first_pressed.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\footer.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\footer_corner_left.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\footer_corner_middle.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\footer_corner_right.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\form_bgr.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\grouping_area.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\grouping_area_column.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\grouping_area_column_dragging.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\grouping_area_column_left.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\grouping_area_column_left_dragging.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\grouping_area_column_right.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\grouping_area_column_right_dragging.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\grouping_area_column_spacer.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\grouping_area_left.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\grouping_area_right.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\grouping_dragged_column.png" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\group_arrow_bottom.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\group_arrow_top.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\group_btn_close.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\group_btn_open.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\group_summary.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\header.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\header_corner_left.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\header_corner_middle.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\header_corner_right.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\header_pressed.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\header_without_grouping.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\interface\OboutDropDownList\images\drop-down-horizontal.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\interface\OboutDropDownList\images\drop-down-horizontal.png" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\interface\OboutDropDownList\images\drop-down-vertical.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\interface\OboutDropDownList\images\drop-down-vertical.png" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\interface\OboutDropDownList\images\horizontal.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\interface\OboutDropDownList\images\horizontal.png" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\interface\OboutDropDownList\images\lighted.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\interface\OboutDropDownList\images\lighted.png" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\interface\OboutDropDownList\images\vertical.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\interface\OboutDropDownList\images\vertical.png" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\interface\OboutDropDownList\style.css" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\interface\OboutTextBox\images\textarea-horizontal.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\interface\OboutTextBox\images\textarea-horizontal.png" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\interface\OboutTextBox\images\textarea-vertical.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\interface\OboutTextBox\images\textarea-vertical.png" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\interface\OboutTextBox\images\textbox.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\interface\OboutTextBox\images\textbox.png" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\interface\OboutTextBox\style.css" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\interface\OboutTextBox\style_multiline.css" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\last_disabled.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\last_normal.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\last_over.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\last_pressed.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\next_disabled.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\next_normal.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\next_over.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\next_pressed.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\page_number_normal.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\page_number_over.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\placeholder.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\placeholder_empty.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\previous_disabled.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\previous_normal.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\previous_over.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\previous_pressed.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\record_group_header.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\record_group_header_padding.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\record_group_header_padding_right.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\row1.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\row2.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\row_hover.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\row_selected.gif" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\style.css" />
+    <Content Include="App_Themes\resources\custom-styles\grand_gray\summary.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\asc.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\desc.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\details_btn_close.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\details_btn_open.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\filter.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\first_disabled.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\first_normal.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\first_over.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\first_pressed.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\footer.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\footer_corner_left.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\footer_corner_middle.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\footer_corner_right.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\form_bgr.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\grouping_area.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\grouping_area_column.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\grouping_area_column_dragging.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\grouping_area_column_left.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\grouping_area_column_left_dragging.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\grouping_area_column_right.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\grouping_area_column_right_dragging.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\grouping_area_column_spacer.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\grouping_area_left.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\grouping_area_right.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\grouping_dragged_column.png" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\group_arrow_bottom.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\group_arrow_top.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\group_btn_close.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\group_btn_open.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\group_summary.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\header.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\header_corner_left.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\header_corner_middle.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\header_corner_right.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\header_pressed.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\header_without_grouping.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\interface\OboutDropDownList\images\drop-down-horizontal.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\interface\OboutDropDownList\images\drop-down-horizontal.png" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\interface\OboutDropDownList\images\drop-down-vertical.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\interface\OboutDropDownList\images\drop-down-vertical.png" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\interface\OboutDropDownList\images\horizontal.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\interface\OboutDropDownList\images\horizontal.png" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\interface\OboutDropDownList\images\lighted.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\interface\OboutDropDownList\images\lighted.png" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\interface\OboutDropDownList\images\vertical.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\interface\OboutDropDownList\images\vertical.png" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\interface\OboutDropDownList\style.css" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\interface\OboutTextBox\images\textarea-horizontal.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\interface\OboutTextBox\images\textarea-horizontal.png" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\interface\OboutTextBox\images\textarea-vertical.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\interface\OboutTextBox\images\textarea-vertical.png" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\interface\OboutTextBox\images\textbox.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\interface\OboutTextBox\images\textbox.png" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\interface\OboutTextBox\style.css" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\interface\OboutTextBox\style_multiline.css" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\last_disabled.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\last_normal.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\last_over.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\last_pressed.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\next_disabled.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\next_normal.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\next_over.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\next_pressed.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\page_number_normal.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\page_number_over.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\placeholder.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\placeholder_empty.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\previous_disabled.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\previous_normal.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\previous_over.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\previous_pressed.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\record_group_header.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\record_group_header_padding.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\record_group_header_padding_right.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\row1.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\row2.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\row_hover.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\row_selected.gif" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\style.css" />
+    <Content Include="App_Themes\resources\custom-styles\premiere_blue\summary.gif" />
+    <Content Include="App_Themes\resources\custom_scripts\column-set\column-set.css" />
+    <Content Include="App_Themes\resources\custom_scripts\column-set\column-set.js" />
+    <Content Include="App_Themes\resources\custom_scripts\column-set\column-set.png" />
+    <Content Include="App_Themes\resources\custom_scripts\column-set\column-sets.png" />
+    <Content Include="App_Themes\resources\custom_scripts\column-set\columnd-set.png" />
+    <Content Include="App_Themes\resources\custom_scripts\dndFromGridToGrid.js" />
+    <Content Include="App_Themes\resources\custom_scripts\dndFromGridToTree.js" />
+    <Content Include="App_Themes\resources\custom_scripts\endRequest.js" />
+    <Content Include="App_Themes\Styles\Date\arrowDown.gif" />
+    <Content Include="App_Themes\Styles\Date\arrowUp.gif" />
+    <Content Include="App_Themes\Styles\Date\date_picker1.gif" />
+    <Content Include="App_Themes\Styles\Date\style.css" />
+    <Content Include="App_Themes\Styles\Horizontal5\bg.gif" />
+    <Content Include="App_Themes\Styles\Horizontal5\bg_a.gif" />
+    <Content Include="App_Themes\Styles\Horizontal5\gag.gif" />
+    <Content Include="App_Themes\Styles\Horizontal5\sep.gif" />
+    <Content Include="App_Themes\Styles\Horizontal5\style.css" />
+    <Content Include="App_Themes\Styles\Horizontal5\submenu.gif" />
+    <Content Include="App_Themes\Styles\Horizontal5\submenu_white.gif" />
+    <Content Include="App_Themes\Styles\Horizontal5\s_bg.gif" />
+    <Content Include="App_Themes\Styles\Interface\OboutButton\images\button.gif" />
+    <Content Include="App_Themes\Styles\Interface\OboutButton\images\button.png" />
+    <Content Include="App_Themes\Styles\Interface\OboutButton\images\overlay.gif" />
+    <Content Include="App_Themes\Styles\Interface\OboutButton\style.css" />
+    <Content Include="App_Themes\Styles\Interface\OboutCheckBox\images\CheckBox.gif" />
+    <Content Include="App_Themes\Styles\Interface\OboutCheckBox\images\CheckBox.png" />
+    <Content Include="App_Themes\Styles\Interface\OboutCheckBox\style.css" />
+    <Content Include="App_Themes\Styles\Interface\OboutComboBox\images\drop-down-horizontal-header-footer.gif" />
+    <Content Include="App_Themes\Styles\Interface\OboutComboBox\images\drop-down-horizontal-header-footer.png" />
+    <Content Include="App_Themes\Styles\Interface\OboutComboBox\images\drop-down-horizontal.gif" />
+    <Content Include="App_Themes\Styles\Interface\OboutComboBox\images\drop-down-horizontal.png" />
+    <Content Include="App_Themes\Styles\Interface\OboutComboBox\images\drop-down-vertical.gif" />
+    <Content Include="App_Themes\Styles\Interface\OboutComboBox\images\drop-down-vertical.png" />
+    <Content Include="App_Themes\Styles\Interface\OboutComboBox\images\footer-middle.png" />
+    <Content Include="App_Themes\Styles\Interface\OboutComboBox\images\header-footer.png" />
+    <Content Include="App_Themes\Styles\Interface\OboutComboBox\images\horizontal-textbox.gif" />
+    <Content Include="App_Themes\Styles\Interface\OboutComboBox\images\horizontal-textbox.png" />
+    <Content Include="App_Themes\Styles\Interface\OboutComboBox\images\horizontal.gif" />
+    <Content Include="App_Themes\Styles\Interface\OboutComboBox\images\horizontal.png" />
+    <Content Include="App_Themes\Styles\Interface\OboutComboBox\images\horizontalnew.gif" />
+    <Content Include="App_Themes\Styles\Interface\OboutComboBox\images\lighted.gif" />
+    <Content Include="App_Themes\Styles\Interface\OboutComboBox\images\lighted.png" />
+    <Content Include="App_Themes\Styles\Interface\OboutComboBox\images\loading.gif" />
+    <Content Include="App_Themes\Styles\Interface\OboutComboBox\images\loading.png" />
+    <Content Include="App_Themes\Styles\Interface\OboutComboBox\images\vertical.gif" />
+    <Content Include="App_Themes\Styles\Interface\OboutComboBox\images\vertical.png" />
+    <Content Include="App_Themes\Styles\Interface\OboutComboBox\style.css" />
+    <Content Include="App_Themes\Styles\Interface\OboutDropDownList\images\drop-down-horizontal.gif" />
+    <Content Include="App_Themes\Styles\Interface\OboutDropDownList\images\drop-down-horizontal.png" />
+    <Content Include="App_Themes\Styles\Interface\OboutDropDownList\images\drop-down-vertical.gif" />
+    <Content Include="App_Themes\Styles\Interface\OboutDropDownList\images\drop-down-vertical.png" />
+    <Content Include="App_Themes\Styles\Interface\OboutDropDownList\images\horizontal.gif" />
+    <Content Include="App_Themes\Styles\Interface\OboutDropDownList\images\horizontal.png" />
+    <Content Include="App_Themes\Styles\Interface\OboutDropDownList\images\lighted.gif" />
+    <Content Include="App_Themes\Styles\Interface\OboutDropDownList\images\lighted.png" />
+    <Content Include="App_Themes\Styles\Interface\OboutDropDownList\images\vertical.gif" />
+    <Content Include="App_Themes\Styles\Interface\OboutDropDownList\images\vertical.png" />
+    <Content Include="App_Themes\Styles\Interface\OboutDropDownList\style.css" />
+    <Content Include="App_Themes\Styles\Interface\OboutRadioButton\images\Radio.gif" />
+    <Content Include="App_Themes\Styles\Interface\OboutRadioButton\images\Radio.png" />
+    <Content Include="App_Themes\Styles\Interface\OboutRadioButton\style.css" />
+    <Content Include="App_Themes\Styles\Interface\OboutTextBox\images\textarea-horizontal.gif" />
+    <Content Include="App_Themes\Styles\Interface\OboutTextBox\images\textarea-horizontal.png" />
+    <Content Include="App_Themes\Styles\Interface\OboutTextBox\images\textarea-vertical.gif" />
+    <Content Include="App_Themes\Styles\Interface\OboutTextBox\images\textarea-vertical.png" />
+    <Content Include="App_Themes\Styles\Interface\OboutTextBox\images\textbox.gif" />
+    <Content Include="App_Themes\Styles\Interface\OboutTextBox\images\textbox.png" />
+    <Content Include="App_Themes\Styles\Interface\OboutTextBox\style.css" />
+    <Content Include="App_Themes\Styles\Interface\OboutTextBox\style_multiline.css" />
+    <Content Include="App_Themes\Styles\Interface\OboutTextBox\style_multiline_reorganized.css" />
+    <Content Include="App_Themes\Styles\new.gif" />
+    <Content Include="App_Themes\Styles\radiobutton.png" />
+    <Content Include="App_Themes\Styles\Splitter\arrow_bottom.gif" />
+    <Content Include="App_Themes\Styles\Splitter\arrow_left.gif" />
+    <Content Include="App_Themes\Styles\Splitter\arrow_right.gif" />
+    <Content Include="App_Themes\Styles\Splitter\arrow_top.gif" />
+    <Content Include="App_Themes\Styles\Splitter\dividerHorizontal.GIF" />
+    <Content Include="App_Themes\Styles\Splitter\dividerVertical.gif" />
+    <Content Include="App_Themes\Styles\Splitter\style.css" />
+    <Content Include="App_Themes\Styles\style.css" />
+    <Content Include="App_Themes\Styles\style_7\asc.gif" />
+    <Content Include="App_Themes\Styles\style_7\desc.gif" />
+    <Content Include="App_Themes\Styles\style_7\details_btn_close.gif" />
+    <Content Include="App_Themes\Styles\style_7\details_btn_open.gif" />
+    <Content Include="App_Themes\Styles\style_7\filter.gif" />
+    <Content Include="App_Themes\Styles\style_7\filter_criterias.gif" />
+    <Content Include="App_Themes\Styles\style_7\first.gif" />
+    <Content Include="App_Themes\Styles\style_7\first_disabled.gif" />
+    <Content Include="App_Themes\Styles\style_7\first_disabled_top.gif" />
+    <Content Include="App_Themes\Styles\style_7\first_normal.gif" />
+    <Content Include="App_Themes\Styles\style_7\first_normal_top.gif" />
+    <Content Include="App_Themes\Styles\style_7\first_over.gif" />
+    <Content Include="App_Themes\Styles\style_7\first_over_top.gif" />
+    <Content Include="App_Themes\Styles\style_7\first_pressed.gif" />
+    <Content Include="App_Themes\Styles\style_7\first_pressed_top.gif" />
+    <Content Include="App_Themes\Styles\style_7\footer.gif" />
+    <Content Include="App_Themes\Styles\style_7\footer_corner_left.gif" />
+    <Content Include="App_Themes\Styles\style_7\footer_corner_middle.gif" />
+    <Content Include="App_Themes\Styles\style_7\footer_corner_right.gif" />
+    <Content Include="App_Themes\Styles\style_7\form_bgr.gif" />
+    <Content Include="App_Themes\Styles\style_7\grouping_area.gif" />
+    <Content Include="App_Themes\Styles\style_7\grouping_area_column.gif" />
+    <Content Include="App_Themes\Styles\style_7\grouping_area_column_dragging.gif" />
+    <Content Include="App_Themes\Styles\style_7\grouping_area_column_left.gif" />
+    <Content Include="App_Themes\Styles\style_7\grouping_area_column_left_dragging.gif" />
+    <Content Include="App_Themes\Styles\style_7\grouping_area_column_right.gif" />
+    <Content Include="App_Themes\Styles\style_7\grouping_area_column_right_dragging.gif" />
+    <Content Include="App_Themes\Styles\style_7\grouping_area_column_spacer.gif" />
+    <Content Include="App_Themes\Styles\style_7\grouping_area_left.gif" />
+    <Content Include="App_Themes\Styles\style_7\grouping_area_left_wtop.gif" />
+    <Content Include="App_Themes\Styles\style_7\grouping_area_right.gif" />
+    <Content Include="App_Themes\Styles\style_7\grouping_area_right_wtop.gif" />
+    <Content Include="App_Themes\Styles\style_7\grouping_dragged_column.png" />
+    <Content Include="App_Themes\Styles\style_7\group_arrow_bottom.gif" />
+    <Content Include="App_Themes\Styles\style_7\group_arrow_top.gif" />
+    <Content Include="App_Themes\Styles\style_7\group_btn_close.gif" />
+    <Content Include="App_Themes\Styles\style_7\group_btn_open.gif" />
+    <Content Include="App_Themes\Styles\style_7\group_summary.gif" />
+    <Content Include="App_Themes\Styles\style_7\header.gif" />
+    <Content Include="App_Themes\Styles\style_7\header_corner_left.gif" />
+    <Content Include="App_Themes\Styles\style_7\header_corner_middle.gif" />
+    <Content Include="App_Themes\Styles\style_7\header_corner_right.gif" />
+    <Content Include="App_Themes\Styles\style_7\header_placeholder.gif" />
+    <Content Include="App_Themes\Styles\style_7\header_pressed.gif" />
+    <Content Include="App_Themes\Styles\style_7\header_without_grouping.gif" />
+    <Content Include="App_Themes\Styles\style_7\images\horizontal.png" />
+    <Content Include="App_Themes\Styles\style_7\interface\OboutCheckBox\images\CheckBox.gif" />
+    <Content Include="App_Themes\Styles\style_7\interface\OboutCheckBox\images\CheckBox.png" />
+    <Content Include="App_Themes\Styles\style_7\interface\OboutCheckBox\style.css" />
+    <Content Include="App_Themes\Styles\style_7\interface\OboutDropDownList\images\drop-down-horizontal.gif" />
+    <Content Include="App_Themes\Styles\style_7\interface\OboutDropDownList\images\drop-down-horizontal.png" />
+    <Content Include="App_Themes\Styles\style_7\interface\OboutDropDownList\images\drop-down-vertical.gif" />
+    <Content Include="App_Themes\Styles\style_7\interface\OboutDropDownList\images\drop-down-vertical.png" />
+    <Content Include="App_Themes\Styles\style_7\interface\OboutDropDownList\images\horizontal.gif" />
+    <Content Include="App_Themes\Styles\style_7\interface\OboutDropDownList\images\horizontal.png" />
+    <Content Include="App_Themes\Styles\style_7\interface\OboutDropDownList\images\lighted.gif" />
+    <Content Include="App_Themes\Styles\style_7\interface\OboutDropDownList\images\lighted.png" />
+    <Content Include="App_Themes\Styles\style_7\interface\OboutDropDownList\images\vertical.gif" />
+    <Content Include="App_Themes\Styles\style_7\interface\OboutDropDownList\images\vertical.png" />
+    <Content Include="App_Themes\Styles\style_7\interface\OboutDropDownList\style.css" />
+    <Content Include="App_Themes\Styles\style_7\interface\OboutTextBox\images\textarea-horizontal.gif" />
+    <Content Include="App_Themes\Styles\style_7\interface\OboutTextBox\images\textarea-horizontal.png" />
+    <Content Include="App_Themes\Styles\style_7\interface\OboutTextBox\images\textarea-vertical.gif" />
+    <Content Include="App_Themes\Styles\style_7\interface\OboutTextBox\images\textarea-vertical.png" />
+    <Content Include="App_Themes\Styles\style_7\interface\OboutTextBox\images\textbox.gif" />
+    <Content Include="App_Themes\Styles\style_7\interface\OboutTextBox\images\textbox.png" />
+    <Content Include="App_Themes\Styles\style_7\interface\OboutTextBox\style.css" />
+    <Content Include="App_Themes\Styles\style_7\interface\OboutTextBox\style_multiline.css" />
+    <Content Include="App_Themes\Styles\style_7\interface\OboutTextBox\style_multiline_reorganized.css" />
+    <Content Include="App_Themes\Styles\style_7\last.gif" />
+    <Content Include="App_Themes\Styles\style_7\last_disabled.gif" />
+    <Content Include="App_Themes\Styles\style_7\last_disabled_top.gif" />
+    <Content Include="App_Themes\Styles\style_7\last_normal.gif" />
+    <Content Include="App_Themes\Styles\style_7\last_normal_top.gif" />
+    <Content Include="App_Themes\Styles\style_7\last_over.gif" />
+    <Content Include="App_Themes\Styles\style_7\last_over_top.gif" />
+    <Content Include="App_Themes\Styles\style_7\last_pressed.gif" />
+    <Content Include="App_Themes\Styles\style_7\last_pressed_top.gif" />
+    <Content Include="App_Themes\Styles\style_7\menustripes.gif" />
+    <Content Include="App_Themes\Styles\style_7\minus.gif" />
+    <Content Include="App_Themes\Styles\style_7\next.gif" />
+    <Content Include="App_Themes\Styles\style_7\next.png" />
+    <Content Include="App_Themes\Styles\style_7\next_disabled.gif" />
+    <Content Include="App_Themes\Styles\style_7\next_disabled_top.gif" />
+    <Content Include="App_Themes\Styles\style_7\next_normal.gif" />
+    <Content Include="App_Themes\Styles\style_7\next_normal_top.gif" />
+    <Content Include="App_Themes\Styles\style_7\next_over.gif" />
+    <Content Include="App_Themes\Styles\style_7\next_over_top.gif" />
+    <Content Include="App_Themes\Styles\style_7\next_pressed.gif" />
+    <Content Include="App_Themes\Styles\style_7\next_pressed_top.gif" />
+    <Content Include="App_Themes\Styles\style_7\page_number_normal.gif" />
+    <Content Include="App_Themes\Styles\style_7\page_number_over.gif" />
+    <Content Include="App_Themes\Styles\style_7\placeholder.gif" />
+    <Content Include="App_Themes\Styles\style_7\placeholder_1111111.gif" />
+    <Content Include="App_Themes\Styles\style_7\placeholder_empty.gif" />
+    <Content Include="App_Themes\Styles\style_7\plus.gif" />
+    <Content Include="App_Themes\Styles\style_7\previous.gif" />
+    <Content Include="App_Themes\Styles\style_7\previous_disabled.gif" />
+    <Content Include="App_Themes\Styles\style_7\previous_disabled_top.gif" />
+    <Content Include="App_Themes\Styles\style_7\previous_normal.gif" />
+    <Content Include="App_Themes\Styles\style_7\previous_normal_top.gif" />
+    <Content Include="App_Themes\Styles\style_7\previous_over.gif" />
+    <Content Include="App_Themes\Styles\style_7\previous_over_top.gif" />
+    <Content Include="App_Themes\Styles\style_7\previous_pressed.gif" />
+    <Content Include="App_Themes\Styles\style_7\previous_pressed_top.gif" />
+    <Content Include="App_Themes\Styles\style_7\record_group_header.gif" />
+    <Content Include="App_Themes\Styles\style_7\record_group_header_padding.gif" />
+    <Content Include="App_Themes\Styles\style_7\record_group_header_padding_right.gif" />
+    <Content Include="App_Themes\Styles\style_7\row1.gif" />
+    <Content Include="App_Themes\Styles\style_7\row2.gif" />
+    <Content Include="App_Themes\Styles\style_7\row_hover.gif" />
+    <Content Include="App_Themes\Styles\style_7\row_selected.gif" />
+    <Content Include="App_Themes\Styles\style_7\row_selected2.gif" />
+    <Content Include="App_Themes\Styles\style_7\style.css" />
+    <Content Include="App_Themes\Styles\style_7\summary.gif" />
+    <Content Include="App_Themes\Styles\submenu.gif" />
+    <Content Include="App_Themes\Styles\TabStrip5\roundcorner_left.gif" />
+    <Content Include="App_Themes\Styles\TabStrip5\roundcorner_left_over.gif" />
+    <Content Include="App_Themes\Styles\TabStrip5\roundcorner_mid.gif" />
+    <Content Include="App_Themes\Styles\TabStrip5\roundcorner_mid_over.gif" />
+    <Content Include="App_Themes\Styles\TabStrip5\roundcorner_right.gif" />
+    <Content Include="App_Themes\Styles\TabStrip5\roundcorner_right_over.gif" />
+    <Content Include="App_Themes\Styles\TabStrip5\style.css" />
+    <Content Include="App_Themes\Styles\wdstyles\aura\aura.css" />
+    <Content Include="App_Themes\Styles\wdstyles\aura\aura.js" />
+    <Content Include="App_Themes\Styles\wdstyles\aura\BottomLineCenter.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\aura\BottomLineLeft.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\aura\BottomLineRight.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\aura\BuiltinButtonsContainer.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\aura\CloseDown.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\aura\CloseOut.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\aura\CloseOver.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\aura\ContentMiddleLeft.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\aura\ContentMiddleRight.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\aura\FooterMiddleCenter.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\aura\FooterMiddleRight.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\aura\HeaderMiddleCenter.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\aura\HeaderMiddleLeft.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\aura\HeaderMiddleRight.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\aura\MaximizeDown.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\aura\MaximizeOut.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\aura\MaximizeOver.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\aura\MinimizeDown.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\aura\MinimizeOut.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\aura\MinimizeOver.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\aura\none.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\aura\RestoreDownDown.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\aura\RestoreDownOut.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\aura\RestoreDownOver.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\aura\windows-error.png" />
+    <Content Include="App_Themes\Styles\wdstyles\aura\windows-info.png" />
+    <Content Include="App_Themes\Styles\wdstyles\aura\windows-warning.png" />
+    <Content Include="App_Themes\Styles\wdstyles\blue\blue.css" />
+    <Content Include="App_Themes\Styles\wdstyles\blue\blue.js" />
+    <Content Include="App_Themes\Styles\wdstyles\blue\Border.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\blue\CloseDown.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\blue\CloseOut.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\blue\CloseOverDown.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\blue\FooterMiddleCenter.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\blue\HeaderMiddleCenter.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\blue\HeaderMiddleLeft.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\blue\HeaderMiddleRight.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\blue\HeaderTopLeft.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\blue\MaximizeOut.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\blue\MaximizeOverDown.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\blue\none.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\blue\windows-error.png" />
+    <Content Include="App_Themes\Styles\wdstyles\blue\windows-info.png" />
+    <Content Include="App_Themes\Styles\wdstyles\blue\windows-warning.png" />
+    <Content Include="App_Themes\Styles\wdstyles\default\BottomLineCenter.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\default\BottomLineLeft.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\default\BottomLineRight.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\default\CloseDown.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\default\CloseOut.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\default\CloseOver.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\default\ContentMiddleLeft.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\default\ContentMiddleRight.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\default\default.css" />
+    <Content Include="App_Themes\Styles\wdstyles\default\default.js" />
+    <Content Include="App_Themes\Styles\wdstyles\default\FooterMiddleCenter.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\default\FooterMiddleLeft.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\default\FooterMiddleRight.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\default\HeaderMiddleCenter.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\default\HeaderMiddleLeft.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\default\HeaderMiddleRight.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\default\HeaderTopCenter.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\default\HeaderTopLeft.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\default\HeaderTopRight.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\default\MaximizeDown.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\default\MaximizeOut.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\default\none.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\default\RestoreDownDown.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\default\RestoreDownOut.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\default\windows-error.png" />
+    <Content Include="App_Themes\Styles\wdstyles\default\windows-info.png" />
+    <Content Include="App_Themes\Styles\wdstyles\default\windows-warning.png" />
+    <Content Include="App_Themes\Styles\wdstyles\dogma\BottomLineCenter.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\dogma\BottomLineLeft.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\dogma\BottomLineRight.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\dogma\BuiltinButtonsContainer.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\dogma\CloseDown.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\dogma\CloseOut.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\dogma\CloseOver.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\dogma\ContentMiddleLeft.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\dogma\ContentMiddleRight.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\dogma\dogma.css" />
+    <Content Include="App_Themes\Styles\wdstyles\dogma\dogma.js" />
+    <Content Include="App_Themes\Styles\wdstyles\dogma\FooterMiddleCenter.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\dogma\FooterMiddleRight.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\dogma\HeaderMiddleCenter.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\dogma\HeaderMiddleLeft.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\dogma\HeaderMiddleRight.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\dogma\MaximizeDown.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\dogma\MaximizeOut.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\dogma\MaximizeOver.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\dogma\MinimizeDown.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\dogma\MinimizeOut.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\dogma\MinimizeOver.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\dogma\none.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\dogma\RestoreDownDown.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\dogma\RestoreDownOut.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\dogma\RestoreDownOver.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\dogma\windows-error.png" />
+    <Content Include="App_Themes\Styles\wdstyles\dogma\windows-info.png" />
+    <Content Include="App_Themes\Styles\wdstyles\dogma\windows-warning.png" />
+    <Content Include="App_Themes\Styles\wdstyles\geryon\BottomLineCenter.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\geryon\BottomLineLeft.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\geryon\BottomLineRight.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\geryon\BuiltinButtonsContainer.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\geryon\CloseDown.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\geryon\CloseOut.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\geryon\CloseOver.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\geryon\ContentMiddleLeft.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\geryon\ContentMiddleRight.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\geryon\FooterMiddleCenter.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\geryon\FooterMiddleRight.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\geryon\geryon.css" />
+    <Content Include="App_Themes\Styles\wdstyles\geryon\geryon.js" />
+    <Content Include="App_Themes\Styles\wdstyles\geryon\HeaderMiddleCenter.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\geryon\HeaderMiddleLeft.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\geryon\HeaderMiddleRight.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\geryon\jquery.min.js" />
+    <Content Include="App_Themes\Styles\wdstyles\geryon\MaximizeDown.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\geryon\MaximizeOut.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\geryon\MaximizeOver.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\geryon\MinimizeDown.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\geryon\MinimizeOut.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\geryon\MinimizeOver.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\geryon\none.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\geryon\RestoreDownDown.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\geryon\RestoreDownOut.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\geryon\RestoreDownOver.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\geryon\windows-error.png" />
+    <Content Include="App_Themes\Styles\wdstyles\geryon\windows-info.png" />
+    <Content Include="App_Themes\Styles\wdstyles\geryon\windows-warning.png" />
+    <Content Include="App_Themes\Styles\wdstyles\grandgray\background_parent.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\grandgray\background_parentover.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\grandgray\background_parentselected.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\grandgray\Border.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\grandgray\child.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\grandgray\childover.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\grandgray\childselected.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\grandgray\CloseOut.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\grandgray\FooterMiddleCenter.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\grandgray\FooterMiddleLeft.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\grandgray\FooterMiddleRight.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\grandgray\grandgray.css" />
+    <Content Include="App_Themes\Styles\wdstyles\grandgray\grandgray.js" />
+    <Content Include="App_Themes\Styles\wdstyles\grandgray\HeaderMiddleCenter.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\grandgray\HeaderMiddleLeft.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\grandgray\HeaderMiddleRight.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\grandgray\HeaderTopLeft.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\grandgray\MaximizeOut.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\grandgray\menuitem.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\grandgray\menuitem_hover.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\grandgray\none.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\grandgray\parent.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\grandgray\parentover.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\grandgray\parentselected.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\grandgray\slide_lighted.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\grandgray\style.css" />
+    <Content Include="App_Themes\Styles\wdstyles\grandgray\windows-error.png" />
+    <Content Include="App_Themes\Styles\wdstyles\grandgray\windows-info.png" />
+    <Content Include="App_Themes\Styles\wdstyles\grandgray\windows-warning.png" />
+    <Content Include="App_Themes\Styles\wdstyles\xpluna\CloseDown.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\xpluna\CloseOut.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\xpluna\CloseOver.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\xpluna\ContentMiddleLeft.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\xpluna\ContentMiddleRight.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\xpluna\FooterBottomCenter.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\xpluna\FooterBottomLeft.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\xpluna\FooterBottomRight.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\xpluna\FooterMiddleCenter.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\xpluna\FooterMiddleLeft.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\xpluna\FooterMiddleRight.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\xpluna\HeaderMiddleCenter.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\xpluna\HeaderMiddleLeft.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\xpluna\HeaderMiddleRight.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\xpluna\MaximizeDown.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\xpluna\MaximizeOut.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\xpluna\MaximizeOver.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\xpluna\none.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\xpluna\RestoreDownDown.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\xpluna\RestoreDownOut.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\xpluna\RestoreDownOver.gif" />
+    <Content Include="App_Themes\Styles\wdstyles\xpluna\windows-error.png" />
+    <Content Include="App_Themes\Styles\wdstyles\xpluna\windows-info.png" />
+    <Content Include="App_Themes\Styles\wdstyles\xpluna\windows-warning.png" />
+    <Content Include="App_Themes\Styles\wdstyles\xpluna\xpluna.css" />
+    <Content Include="App_Themes\Styles\wdstyles\xpluna\xpluna.js" />
+    <Content Include="danhmuc\dmhuyentinh.aspx" />
+    <Content Include="danhmuc\dmnhanvien.aspx" />
+    <Content Include="danhmuc\dmnhapkho.aspx" />
+    <Content Include="danhmuc\dmnhapkhoNC.aspx" />
+    <Content Include="danhmuc\nhapktcanhan.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="js\flatmenu-responsive.js" />
+    <Content Include="js\GoogleChart.js" />
+    <Content Include="js\jquery.min.js" />
+    <Content Include="js\NTSLibrary.js" />
+    <Content Include="public\css\css.css" />
+    <Content Include="Script\NTSLibrary.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class\ntsLibraryFunctions.cs" />
+    <Compile Include="Class\ntsSession.cs" />
+    <Compile Include="Class\ntsExcel.cs" />
+    <Compile Include="danhmuc\dmhuyentinh.aspx.cs">
+      <DependentUpon>dmhuyentinh.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="danhmuc\dmhuyentinh.aspx.designer.cs">
+      <DependentUpon>dmhuyentinh.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="danhmuc\dmnhanvien.aspx.cs">
+      <DependentUpon>dmnhanvien.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="danhmuc\dmnhanvien.aspx.designer.cs">
+      <DependentUpon>dmnhanvien.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="danhmuc\dmnhapkho.aspx.cs">
+      <DependentUpon>dmnhapkho.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="danhmuc\dmnhapkho.aspx.designer.cs">
+      <DependentUpon>dmnhapkho.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="danhmuc\dmnhapkhoNC.aspx.cs">
+      <DependentUpon>dmnhapkhoNC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="danhmuc\dmnhapkhoNC.aspx.designer.cs">
+      <DependentUpon>dmnhapkhoNC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="danhmuc\dmquanhuyen.aspx.cs">
+      <DependentUpon>dmquanhuyen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="danhmuc\dmquanhuyen.aspx.designer.cs">
+      <DependentUpon>dmquanhuyen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="danhmuc\dmtinh.aspx.cs">
+      <DependentUpon>dmtinh.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="danhmuc\dmtinh.aspx.designer.cs">
+      <DependentUpon>dmtinh.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="danhmuc\dmxaphuong.aspx.cs">
+      <DependentUpon>dmxaphuong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="danhmuc\dmxaphuong.aspx.designer.cs">
+      <DependentUpon>dmxaphuong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="danhmuc\nhapktcanhan.aspx.cs">
+      <DependentUpon>nhapktcanhan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="danhmuc\nhapktcanhan.aspx.designer.cs">
+      <DependentUpon>nhapktcanhan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnect\Users.cs">
+      <DependentUpon>Users.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnect\Users.designer.cs">
+      <DependentUpon>Users.dbml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.Master.cs">
+      <DependentUpon>Default.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.Master.designer.cs">
+      <DependentUpon>Default.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App_Themes\resources\custom-styles\grand_gray\interface\OboutTextBox\images\Thumbs.db" />
+    <None Include="App_Themes\resources\custom_scripts\column-set\column-set.rar" />
+    <None Include="App_Themes\Styles\Interface\OboutButton\images\images.rar" />
+    <None Include="App_Themes\Styles\Interface\OboutComboBox\style.rar" />
+    <None Include="App_Themes\Styles\Interface\OboutTextBox\images\images.rar" />
+    <None Include="App_Themes\Styles\Styles.rar" />
+    <None Include="App_Themes\Styles\style_7\interface\OboutTextBox\images\images.rar" />
+    <None Include="DataConnect\Connetion1.nts" />
+    <None Include="DataConnect\Connetion2.nts" />
+    <None Include="DataConnect\Users.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Users.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="danhmuc\dmquanhuyen.aspx" />
+    <Content Include="danhmuc\dmtinh.aspx" />
+    <Content Include="danhmuc\dmxaphuong.aspx" />
+    <Content Include="Default.Master" />
+    <Content Include="Global.asax" />
+    <Content Include="js\jquery-3.3.1.min.js" />
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataConnect\Users.dbml.layout">
+      <DependentUpon>Users.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="App_Themes\BuocThaoTac\" />
+    <Folder Include="baocao\" />
+    <Folder Include="Content\themes\Theme_1\" />
+    <Folder Include="css\" />
+    <Folder Include="excelmau\" />
+    <Folder Include="lte\bower_components\" />
+    <Folder Include="lte\build\" />
+    <Folder Include="lte\dist\" />
+    <Folder Include="public\i\" />
+    <Folder Include="public\js\" />
+    <Folder Include="quanly\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>18140</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

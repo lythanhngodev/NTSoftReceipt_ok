@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 15, 13.125" name="Users">
+  <DataContextMoniker Name="/UsersDataContext" />
+  <nestedChildShapes>
+    <classShape Id="8244ac7c-c6f1-43bb-8383-e63d31332f09" absoluteBounds="0.75, 5.75, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/UsersDataContext/tblConnectString" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3f9c1f96-1919-4948-bc46-092e05399430" absoluteBounds="0.76499999999999968, 6.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="96df5d2b-95fd-4fc5-b15d-88cab5c6ef9e" absoluteBounds="6.75, 7.75, 2, 1.3862939453125014">
+      <DataClassMoniker Name="/UsersDataContext/tblDB" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5a3802de-c95d-4b7e-9d38-8737dafafbc8" absoluteBounds="6.765, 8.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7d9138b2-11f9-4762-907f-9a5826e2ea68" absoluteBounds="8.75, 0.75, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/UsersDataContext/tblDMPhongBan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c7ba4aed-ff0c-46fe-923c-465aceb43f2b" absoluteBounds="8.765, 1.2100000000000009, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0cd3165d-ca10-4b6b-afbe-2607b5dcbc24" absoluteBounds="9.5, 4.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/UsersDataContext/tblGroupPermiss" />
+      <nestedChildShapes>
+        <elementListCompartment Id="600615ef-2cf9-4afd-92a0-b8ca21edeac7" absoluteBounds="9.5150000005960464, 5.33500000089407, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="acaa8e1a-a2f4-4485-be0b-b9e5a6c0c10a" absoluteBounds="9.75, 7.75, 2, 1.9631982421875014">
+      <DataClassMoniker Name="/UsersDataContext/tblLog" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1692ec48-7290-4994-b146-bfbb6d9bec6c" absoluteBounds="9.765, 8.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c68be721-ae1a-434e-bda2-84f139f3bdc0" absoluteBounds="6.75, 10.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/UsersDataContext/tblNguoiSudung" />
+      <nestedChildShapes>
+        <elementListCompartment Id="15ee4c44-260d-488b-ad1f-70794899341e" absoluteBounds="6.7650000000000006, 11.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="eec52fbb-f357-4856-93ff-bb4fbf4eea84" absoluteBounds="9.75, 10.75, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/UsersDataContext/tblPermiss" />
+      <nestedChildShapes>
+        <elementListCompartment Id="51f9678b-e3bd-41a4-996b-54db439dccb5" absoluteBounds="9.765, 11.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2485b8ed-e9c2-46bb-8298-a9be8742d601" absoluteBounds="11.75, 0.75, 2, 1.0016910807291666">
+      <DataClassMoniker Name="/UsersDataContext/tblPositionShow" />
+      <nestedChildShapes>
+        <elementListCompartment Id="799bcfbd-cad5-4105-b42e-c13b38439d58" absoluteBounds="11.765, 1.2100000000000009, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="68b5c5b5-4608-427b-8823-1253a521c962" absoluteBounds="11.75, 2.75, 2, 1.0016910807291666">
+      <DataClassMoniker Name="/UsersDataContext/tblShowEvent" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ef0b7fe8-1057-439a-8649-6dd3353f5dc2" absoluteBounds="11.765, 3.2100000000000009, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c73a0853-1a3e-41aa-b031-28ad3da3e7a8" absoluteBounds="12.75, 4.75, 2, 6.9630354817708309">
+      <DataClassMoniker Name="/UsersDataContext/tblThongTinDN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b3a074b4-d07f-4da0-a580-f94d350f9e20" absoluteBounds="12.765, 5.2100000000000009, 1.9700000000000002, 6.403035481770833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ee303d22-96ba-417a-aeed-240d4e583ac7" absoluteBounds="6.75, 5.125, 2, 1.1939925130208327">
+      <DataClassMoniker Name="/UsersDataContext/tblUserGroup" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e525e0c9-bbcb-452e-b081-112a020b8bff" absoluteBounds="6.7650000005960464, 5.58500000089407, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1f8afb87-8e92-4a14-a60e-25cf3caa3343" absoluteBounds="6.25, 2, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/UsersDataContext/tblUserPermiss" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c3e95294-f45a-42f9-b4b0-a4589b448617" absoluteBounds="6.2650000005960464, 2.4600000008940697, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.75 : 5.72199625651042); (9.5 : 5.72199625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/UsersDataContext/tblUserGroup/tblUserGroup_tblGroupPermiss" />
+      <nodes>
+        <classShapeMoniker Id="ee303d22-96ba-417a-aeed-240d4e583ac7" />
+        <classShapeMoniker Id="0cd3165d-ca10-4b6b-afbe-2607b5dcbc24" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="97c8921a-5b23-4276-b2fe-f79398e34aca" absoluteBounds="3.5, 8, 2, 4.4631168619791666">
+      <DataClassMoniker Name="/UsersDataContext/tblFunction" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4999ab24-9e4d-452a-bb15-be3cf69caf51" absoluteBounds="3.5150000005960464, 8.46000000089407, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 9.94314697265625); (6.46875 : 9.94314697265625); (6.46875 : 3.57859537760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/UsersDataContext/tblFunction/tblFunction_tblUserPermiss" />
+      <nodes>
+        <classShapeMoniker Id="97c8921a-5b23-4276-b2fe-f79398e34aca" />
+        <classShapeMoniker Id="1f8afb87-8e92-4a14-a60e-25cf3caa3343" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="79b050aa-776f-458a-8c6b-1e10fe4cf2ed" absoluteBounds="3.5, 1, 2, 3.5016097005208326">
+      <DataClassMoniker Name="/UsersDataContext/tblUser" />
+      <nestedChildShapes>
+        <elementListCompartment Id="67406a44-19db-438e-88ba-bb56cb099e77" absoluteBounds="3.5150000005960464, 1.4600000008940697, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 2.78929768880208); (6.25 : 2.78929768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/UsersDataContext/tblUser/tblUser_tblUserPermiss" />
+      <nodes>
+        <classShapeMoniker Id="79b050aa-776f-458a-8c6b-1e10fe4cf2ed" />
+        <classShapeMoniker Id="1f8afb87-8e92-4a14-a60e-25cf3caa3343" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="da0a2e19-5b02-4783-8fd6-edb712a2a8b3" absoluteBounds="0.75, 1.5, 2, 2.5401025390624996">
+      <DataClassMoniker Name="/UsersDataContext/tblDMDonvi" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7951a08a-58da-4094-b010-f7e14e28b979" absoluteBounds="0.76500000059604645, 1.9600000008940697, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 2.77005126953125); (3.5 : 2.77005126953125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/UsersDataContext/tblDMDonvi/tblDMDonvi_tblUser" />
+      <nodes>
+        <classShapeMoniker Id="da0a2e19-5b02-4783-8fd6-edb712a2a8b3" />
+        <classShapeMoniker Id="79b050aa-776f-458a-8c6b-1e10fe4cf2ed" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
