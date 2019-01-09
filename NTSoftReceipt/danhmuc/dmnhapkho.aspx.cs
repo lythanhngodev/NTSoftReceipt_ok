@@ -28,6 +28,7 @@ namespace NTSoftReceipt.danhmuc
         }
         public bool KTraXoa(string ma, string khoa)
         {
+            khoa += "_sd";
             string strSQL = "SELECT TABLE_NAME tablename FROM INFORMATION_SCHEMA.COLUMNS WHERE COLUMN_NAME = N'"+khoa+"'";
             SqlFunction _sqlClass = new SqlFunction(Session.GetConnectionString2());
             DataTable _dt = new DataTable();

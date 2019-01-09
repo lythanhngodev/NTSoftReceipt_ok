@@ -4,6 +4,7 @@
 <%@ Register Assembly="obout_Grid_NET" Namespace="Obout.Grid" TagPrefix="cc1" %>
 <%@ Register Assembly="obout_Interface" Namespace="Obout.Interface" TagPrefix="cc2" %>
 <%@ Register Assembly="obout_ComboBox" Namespace="Obout.ComboBox" TagPrefix="cc3" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 
 <asp:Content runat="server" ID="Content1" ContentPlaceHolderID="head">
     <style>
@@ -27,6 +28,13 @@
             var Window1Size = Window1.getSize();
             Window1.setPosition(parseFloat((parseFloat(screenWidth) - parseFloat(Window1Size.width)) / 2), 200);
             Window1.Open();
+        }
+        function setWindowPositionW3() {
+            var screenWidth = screen.width;
+            var screenHeight = screen.height;
+            var Window3Size = Window3.getSize();
+            Window3.setPosition(parseFloat((parseFloat(screenWidth) - parseFloat(Window3Size.width)) / 2), 200);
+            Window3.Open();
         }
         function LamMoiWindow1() {
             _txtMaNhanVien.disable();
@@ -178,62 +186,119 @@
         function _cbXa_SelectedIndexChanged() {
             DiaChi();
         }
+        function onClientOpen_Dialog1() {
+            document.getElementById("info").innerHTML = "";
+            return false;
+        }
+        function NhapExcel() {
+            dlgUpload.Open();
+            return false;
+        }
+        function uploadExcelError(sender, args) {
+            alert("Tải tập tin Excel mẫu thất bại!");
+        }
+        function uploadExcelStarted() {
+            document.getElementById("info").innerHTML = "<br/>Đang tải tệp tin...";
+            document.getElementById('linkLoichitiet').style.visibility = "hidden";
+        }
+        function uploadExcelComplete(sender, args) {
+            document.getElementById("info").innerHTML = "<br/>...";
+            var fileExtension = args.get_fileName();
+            if (fileExtension.indexOf('.xls') != -1) {
+                if (cbXoaDuLieuCu.checked()) {
+                        var kq = (NTSoftReceipt.danhmuc.dmnhanvien.NhapDuLieuExcel_Xoa());
+                        document.getElementById("loiChiTiet").innerHTML = kq.value[0];
+                        if (kq.value[0].trim().length>0) {
+                            document.getElementById('linkLoichitiet').style.visibility = "visible";
+                        } else {
+                            document.getElementById('linkLoichitiet').style.visibility = "hidden";
+                        }
+                        document.getElementById("info").innerHTML = "Tổng số dòng: "+kq.value[3]+", Thành công: " + kq.value[1] + ", Không thành công: " + kq.value[2];
+                        document.getElementById('info').style.visibility = "visible";
+                    }
+                else {
+                        var kq = (NTSoftReceipt.danhmuc.dmnhanvien.NhapDuLieuExcel());
+                        document.getElementById("loiChiTiet").innerHTML = kq.value[0];
+                        if (kq.value[0].trim().length>0) {
+                            document.getElementById('linkLoichitiet').style.visibility = "visible";
+                            
+                        } else {
+                            document.getElementById('linkLoichitiet').style.visibility = "hidden";
+                        }
+                        document.getElementById("info").innerHTML = "Tổng số dòng: " + kq.value[3] + ", Thành công: " + kq.value[1] + ", Không thành công: " + kq.value[2];
+                        document.getElementById('info').style.visibility = "visible";
+                }
+                document.getElementById('<%= _txtLoadRefesh.ClientID %>').value = "lammoi";
+                Grid1.refresh();
+            } else {
+                document.getElementById("info").innerHTML = "<br/>Tập tin Excel mẫu không đúng định dạng.";
+                return;
+            }
+        }
+        function XemChiTietLoiNhapExcel() {
+            DialogLoi.Open();
+            return false;
+        }
     </script>
+
 </asp:Content>
 
 <asp:Content runat="server" ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1">
+    <h1>NHÂN VIÊN</h1>
     <asp:HiddenField runat="server" ID="_txtKey" />
     <asp:HiddenField runat="server" ID="_txtLoadRefesh" Value="lammoi" />
     <cc1:Grid ID="Grid1" runat="server" FolderStyle="~/App_Themes/Styles/style_7" AllowPaging="true"
-        PageSizeOptions="5,10,15,20" PageSize="15" AutoGenerateColumns="false"
-        AllowFiltering="true" EnableRecordHover="true" AllowGrouping="false" Height="500"
-         AllowAddingRecords="false" AllowMultiRecordSelection="False" AllowMultiRecordAdding="false" OnRebind="Grid1_Rebind" >
+        PageSizeOptions="15,20" PageSize="15" AutoGenerateColumns="false"
+        AllowFiltering="true" EnableRecordHover="true" AllowGrouping="false" Width="800" Height="500" AllowColumnResizing="true" 
+        AllowAddingRecords="false" AllowMultiRecordSelection="False" AllowMultiRecordAdding="false" OnRebind="Grid1_Rebind" >
         <PagingSettings Position="Bottom" />
         <FilteringSettings InitialState="Hidden" FilterPosition="Top" FilterLinksPosition="Bottom" />
-        <ScrollingSettings EnableVirtualScrolling="true" />
+        <ScrollingSettings EnableVirtualScrolling="false" />
         <ClientSideEvents OnBeforeClientEdit="OnBeforeClientEdit" OnBeforeClientDelete="OnBeforeClientDelete" />
         <Columns>
             <cc1:Column AllowDelete="true" AllowEdit="true" HeaderText="Sửa/Xóa" Width="100px">
             </cc1:Column>
-            <cc1:Column HeaderText="Mã NV" DataField="maNhanVienpr" Width="150px" ReadOnly="true" Wrap ="true"
+            <cc1:Column HeaderText="Mã NV" DataField="maNhanVienpr" Width="150px" ReadOnly="true" Wrap="true"
                 Visible="true">
             </cc1:Column>
-            <cc1:Column HeaderText="Tên NV" DataField="tenNhanVien" Width="300px" Wrap ="true">
+            <cc1:Column HeaderText="Tên NV" DataField="tenNhanVien" Width="300px" Wrap="true">
             </cc1:Column>
-            <cc1:Column HeaderText="Giới tính" DataField="gioiTinh" Width="150px" Wrap ="true">
+            <cc1:Column HeaderText="Giới tính" DataField="gioiTinh" Width="150px" Wrap="true">
             </cc1:Column>
             <cc1:Column HeaderText="Địa chỉ" DataField="diaChi" Width="180px" Wrap="true">
             </cc1:Column>
             <cc1:Column HeaderText="SĐT" DataField="soDienThoai" Width="120px">
             </cc1:Column>
-            <cc1:Column HeaderText="Thu nhập" DataField="thuNhap" Width="150px" Wrap ="true">
+            <cc1:Column HeaderText="NS" DataField="namSinh" DataFormatString="{0:dd/MM/yyyy}" Width="120px">
+            </cc1:Column>
+            <cc1:Column HeaderText="Thu nhập" DataField="thuNhap" DataFormatString="{0:#,#0}" Width="150px" Wrap="true">
             </cc1:Column>
             <cc1:Column HeaderText="Phòng ban" DataField="tenPhongBan" Width="180px" Wrap="true">
             </cc1:Column>
-            <cc1:Column HeaderText="Mã phong ban" DataField="sttPhongBanpr" Width="100px" Visible="false"   >
+            <cc1:Column HeaderText="Mã phong ban" DataField="sttPhongBanpr" Width="100px" Visible="false">
             </cc1:Column>
             <cc1:Column HeaderText="Ghi chú" DataField="ghiChu" Width="120px">
             </cc1:Column>
         </Columns>
         <LocalizationSettings CancelAllLink="Hủy tất cả" AddLink="Thêm mới" CancelLink="Hủy"
             DeleteLink="Xóa" EditLink="Sửa" Filter_ApplyLink="Tìm kiếm" Filter_HideLink="Đóng tìm kiếm"
-            Filter_RemoveLink="Xóa tìm kiếm" Filter_ShowLink="Mở tìm kiếm" 
+            Filter_RemoveLink="Xóa tìm kiếm" Filter_ShowLink="Mở tìm kiếm"
             FilterCriteria_NoFilter="Không tìm kiếm"
-                            FilterCriteria_Contains="Chứa"
-                            FilterCriteria_DoesNotContain="Không chứa"
-                            FilterCriteria_StartsWith="Bắt đầu với"
-                            FilterCriteria_EndsWith="Kết thúc với"
-                            FilterCriteria_EqualTo="Bằng"
-                            FilterCriteria_NotEqualTo="Không bằng"
-                            FilterCriteria_SmallerThan="Nhỏ hơn"
-                            FilterCriteria_GreaterThan="Lớn hơn"
-                            FilterCriteria_SmallerThanOrEqualTo="Nhỏ hơn hoặc bằng"
-                            FilterCriteria_GreaterThanOrEqualTo="Lớn hơn hoặc bằng"
-                            FilterCriteria_IsNull="Rỗng"
-                            FilterCriteria_IsNotNull="Không rỗng"
-                            FilterCriteria_IsEmpty="Trống"
-                            FilterCriteria_IsNotEmpty="Không trống"
-                            Paging_OfText="của"
+            FilterCriteria_Contains="Chứa"
+            FilterCriteria_DoesNotContain="Không chứa"
+            FilterCriteria_StartsWith="Bắt đầu với"
+            FilterCriteria_EndsWith="Kết thúc với"
+            FilterCriteria_EqualTo="Bằng"
+            FilterCriteria_NotEqualTo="Không bằng"
+            FilterCriteria_SmallerThan="Nhỏ hơn"
+            FilterCriteria_GreaterThan="Lớn hơn"
+            FilterCriteria_SmallerThanOrEqualTo="Nhỏ hơn hoặc bằng"
+            FilterCriteria_GreaterThanOrEqualTo="Lớn hơn hoặc bằng"
+            FilterCriteria_IsNull="Rỗng"
+            FilterCriteria_IsNotNull="Không rỗng"
+            FilterCriteria_IsEmpty="Trống"
+            FilterCriteria_IsNotEmpty="Không trống"
+            Paging_OfText="của"
             Grouping_GroupingAreaText="Kéo tiêu đề cột vào đây để loại theo cột đó" JSWarning="Có một lỗi khởi tạo lưới với ID '[GRID_ID]'. \ N \ n [Chú ý] \ n \ nHãy liên hệ bộ phận bảo trì của Nhất Tâm Soft để được giúp đỡ."
             LoadingText="Đang tải...." MaxLengthValidationError="Giá trị mà bạn đã nhập vào trong cột XXXXX vượt quá số lượng tối đa ký tự YYYYY cho phép cột này."
             ModifyLink="Chỉnh sửa" NoRecordsText="Không có dữ liệu" Paging_ManualPagingLink="Trang kế »"
@@ -246,11 +311,12 @@
                 <Template>
                     <asp:Label>Nhân Viên</asp:Label>
                     <input type="button" value="Thêm mới" class="nutthem" onclick="ThemMoi()" />
-                    <input 
-                    type="text" 
-                    style="width: 250px" 
-                    placeholder="Nội dung tìm kiếm..." 
-                    class="otim" onkeyup="TimKiem(this.value)" />
+                    <input type="button" value="Nhập từ Excel" class="nutthem" onclick="NhapExcel()" />
+                    <input
+                        type="text"
+                        style="width: 250px"
+                        placeholder="Nội dung tìm kiếm..."
+                        class="otim" onkeyup="TimKiem(this.value)" />
                 </Template>
             </cc1:GridTemplate>
         </Templates>
@@ -416,4 +482,30 @@
                 </table>
             </div>
         </owd:Dialog>
+    <ajaxToolkit:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
+    </ajaxToolkit:ToolkitScriptManager>
+    <owd:Dialog ID="dlgUpload" runat="server" IsModal="true" ShowCloseButton="true" Top="0"
+        Left="250" Height="200" Width="400" VisibleOnLoad="false" StyleFolder="~/ThiDuaKhenThuong/App_Themes/Styles/wdstyles/dogma"
+        Title="Chọn tập tin" OnClientOpen="onClientOpen_Dialog1()">
+        <div style="padding-top: 10px">
+            <cc2:OboutCheckBox ID="cbXoaDuLieuCu" runat="server" Text="Xóa dữ liệu cũ"
+                FolderStyle="~/ThiDuaKhenThuong/App_Themes/Styles/Interface/OboutCheckBox">
+            </cc2:OboutCheckBox>
+            <ajaxToolkit:AsyncFileUpload OnClientUploadError="uploadExcelError" OnClientUploadComplete="uploadExcelComplete"
+                OnClientUploadStarted="uploadExcelStarted" runat="server" ID="AsyncFileUpload"
+                Width="390px" UploaderStyle="Traditional" UploadingBackColor="" ThrobberID="myThrobber"
+                BorderStyle="NotSet" Font-Underline="False" Font-Strikeout="False" />
+            <br />
+            <span><i>Chỉ cho phép tải lên tập tin định dạng: xls,xlsx</i></span><br />
+            <span id="info" style="color: Red"></span><br />
+            <a id="linkLoichitiet" style="visibility:hidden;cursor:pointer" onclick="XemChiTietLoiNhapExcel();return false;"><u>Xem chi tiết lỗi >></u></a>
+        </div>
+    </owd:Dialog>
+    <owd:Dialog ID="DialogLoi" runat="server" IsModal="true" ShowCloseButton="true" Top="0"
+        Left="250" Height="350" Width="400" VisibleOnLoad="false" StyleFolder="~/ThiDuaKhenThuong/App_Themes/Styles/wdstyles/dogma"
+        Title="Chọn tập tin" OnClientOpen="onClientOpen_Dialog1()">
+        <div style="padding-top: 10px;height:350px;overflow:auto;" id="loiChiTiet">
+        </div>
+    </owd:Dialog>
+
 </asp:Content>

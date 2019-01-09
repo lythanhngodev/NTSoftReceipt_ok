@@ -24,10 +24,12 @@
                 <td><a href="danhmuc/dmquanhuyen.aspx">DM quận/huyện</a></td>
                 <td><a href="danhmuc/dmxaphuong.aspx">DM xã/phường</a></td>
                 <td><a href="danhmuc/dmhuyentinh.aspx">DM Huyện / Tỉnh</a></td>
+            </tr>
+            <tr>
                 <td><a href="danhmuc/dmnhanvien.aspx">DM nhân viên</a></td>
                 <td><a href="danhmuc/dmnhapkho.aspx">DM nhập kho</a></td>
+                <td><a href="danhmuc/dmnhapkhoNC.aspx">DM nhập kho NC</a></td>
             </tr>
-            
         </table>
     </div>
     </form>

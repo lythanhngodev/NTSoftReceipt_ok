@@ -76,8 +76,6 @@
             } catch (e) {
                 document.getElementById('txtNgayNhap').value = null;
             }
-
-
             return false;
         }
         function OnBeforeClientDelete(record){

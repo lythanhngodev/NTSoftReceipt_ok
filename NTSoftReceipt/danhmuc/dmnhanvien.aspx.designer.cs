@@ -209,5 +209,50 @@ namespace NTSoftReceipt.danhmuc {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Obout.Interface.OboutButton btnHuy;
+        
+        /// <summary>
+        /// ToolkitScriptManager1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.ToolkitScriptManager ToolkitScriptManager1;
+        
+        /// <summary>
+        /// dlgUpload control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::OboutInc.Window.Dialog dlgUpload;
+        
+        /// <summary>
+        /// cbXoaDuLieuCu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Obout.Interface.OboutCheckBox cbXoaDuLieuCu;
+        
+        /// <summary>
+        /// AsyncFileUpload control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.AsyncFileUpload AsyncFileUpload;
+        
+        /// <summary>
+        /// DialogLoi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::OboutInc.Window.Dialog DialogLoi;
     }
 }
